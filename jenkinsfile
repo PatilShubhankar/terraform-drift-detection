@@ -1,0 +1,49 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("clean-ws"){
+            steps{
+                script {
+                    sh """
+                    echo clean ws
+                    """
+                }
+            }
+        }
+        stage("clone-repo"){
+            steps{
+                script {
+                    sh """
+                    echo clone repo
+                    """
+                }
+            }
+        }
+        stage("create-plan"){
+            steps{
+                script {
+                    sh """
+                    echo terraform plan
+                    """
+                }
+            }
+        }
+        stage("Trigger notification"){
+            steps{
+                script {
+                    sh """
+                    echo Slack notification
+                    """
+                }
+            }
+        }
+        stage("clean-ws"){
+            steps{
+                script{
+                    sh """echo cleaning"""
+                }
+            }
+        }
+    }
+}
