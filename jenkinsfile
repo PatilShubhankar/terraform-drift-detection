@@ -12,9 +12,10 @@ pipeline{
         stage("clone-repo"){
             steps{
                 script {
-                    sh """
-                    echo clone repo
-                    """
+                    checkout scmGit(
+                            branches: [[name: 'mainline']],
+                            userRemoteConfigs: [[url: 'git@github.com:PatilShubhankar/terraform-drift-detection.git',
+                            credentialsId:  'git-shubhankar']])
                 }
             }
         }
