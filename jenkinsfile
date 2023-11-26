@@ -26,7 +26,7 @@ pipeline{
             steps{
                 script {
                     sh """
-                    terraform plan -out .\plan-output\output.tfplan  
+                    terraform plan -out ./plan-output/output.tfplan  
                     terraform show -no-color -json ./plan-output/output.tfplan > ./plan-output/output.json 
                     """
                 }
