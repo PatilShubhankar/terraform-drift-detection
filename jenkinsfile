@@ -5,9 +5,7 @@ pipeline{
         stage("clean-ws"){
             steps{
                 script {
-                    sh """
-                    echo clean ws
-                    """
+                    cleanWs()
                 }
             }
         }
