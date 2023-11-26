@@ -38,7 +38,7 @@ pipeline{
                 }
             }
         }
-        stage("clean-ws"){
+        stage("Remove plan"){
             steps{
                 script{
                     sh """echo cleaning"""
