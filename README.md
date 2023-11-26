@@ -9,5 +9,11 @@ drif-detection.py uses boto3 for creating clodtrail client.
 
 Jenkins has been used as automation server which checks for drift every day. Cofiguration for this is written in jenkinfile. 
 
-<img src="/img/Screenshot 2023-11-26 160318.png">
 <img src="/img/Screenshot 2023-11-26 161748.png">
+
+
+I have made changes manually to terraform managed resources. 
+drif-detection.py is able to detect AWS username who has made those changes. 
+<img src="/img/Screenshot 2023-11-26 160318.png">
+
+If AWS username and Slack username is same, we can send personal message on slack to user who has made these changes. 
