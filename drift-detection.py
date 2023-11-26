@@ -4,7 +4,7 @@ import os
 import sys
 import pprint
 
-output_file = open(r'C:\Users\shubh\Documents\terraform-drift-detection\terraform-code\plan-output\output.json', 'rb')
+output_file = open(r'terraform-drift-detection\terraform-code\plan-output\output.json', 'rb')
 output_json = json.load(output_file)
 
 
