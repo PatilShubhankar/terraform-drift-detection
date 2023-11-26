@@ -26,7 +26,17 @@ pipeline{
             steps{
                 script {
                     sh """
-                    echo terraform plan
+                    terraform plan -out .\plan-output\output.tfplan  
+                    terraform show -no-color -json ./plan-output/output.tfplan > ./plan-output/output.json 
+                    """
+                }
+            }
+        }
+        stage('check-drift'){
+            steps{
+                script {
+                    sh """
+                    python drift-detection.py >> output.txt
                     """
                 }
             }
@@ -43,7 +53,7 @@ pipeline{
         stage("Remove plan"){
             steps{
                 script{
-                    sh """echo cleaning"""
+                    cleanWs()
                 }
             }
         }
