@@ -16,6 +16,9 @@ pipeline{
                             branches: [[name: 'mainline']],
                             userRemoteConfigs: [[url: 'git@github.com:PatilShubhankar/terraform-drift-detection.git',
                             credentialsId:  'git-shubhankar']])
+                    sh """
+                    ls -lrt
+                    """
                 }
             }
         }
